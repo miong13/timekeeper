@@ -1,0 +1,40 @@
+ERROR - 2023-09-09 03:19:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Console.php(37): CodeIgniter\CLI\Commands->run()
+#10 /var/www/ci/timekeeper/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#7 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#8 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Console.php(37): CodeIgniter\CLI\Commands->run()
+#9 /var/www/ci/timekeeper/spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-09-09 03:34:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4 in /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/ci/timekeeper/app/Database/Seeds/Users.php(23): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Database/Seeder.php(146): App\Database\Seeds\Users->run()
+#5 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(77): CodeIgniter\Database\Seeder->call()
+#6 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Seed->run()
+#7 /var/www/ci/timekeeper/vendor/codeigniter4/framework/system/CLI/Console.php(37): CodeIgniter\CLI\Commands->run()
+#8 /var/www/ci/timekeeper/spark(102): CodeIgniter\CLI\Console->run()
+#9 {main}
